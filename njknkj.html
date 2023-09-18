@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form to Table</title>
+</head>
+<body>
+    <h1>Enter Details</h1>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Details Table</h2>
+    <table id="detailsTable" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Details will be displayed here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Get references to the form and table
+        const form = document.getElementById("myForm");
+        const table = document.getElementById("detailsTable").getElementsByTagName('tbody')[0];
+
+        // Add form submission event listener
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+
+            // Create a new row in the table
+            const newRow = table.insertRow(table.rows.length);
+
+            // Insert cells with the form values
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            cell1.innerHTML = name;
+            cell2.innerHTML = email;
+            cell3.innerHTML = phone;
+
+            // Clear the form fields
+            form.reset();
+        });
+    </script>
+</body>
+</html>
