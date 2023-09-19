@@ -1,79 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  <title><h1></h1></title>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <script src="./script.js"></script>
-  <script src="https:app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+    <h1 id="title">FORM:</h1>
+    <p id="description">THIS IS SURVEY - FORM</p>
+    <form id="survey-form" class="survey-form">
+        <div id="Name">
+            <label for="first-name" id="name-label">
+                First Name:
+                <input type="Name" id="first-name" placeholder="Enter First Name">
+            </label>
 
-   
-    <h1 id="title">Please fill the form </h1>
-    <p id="description">The below give details will be used only in this website</p>
-
-    <form id="form">
-      <div class="form-group">
-
-          <label >First Name:</label>
-          <input type="text"  id="first-name" placeholder="enter your first name" required>
-         
-          <label >Last Name:</label>
-          <input  type="text" id="last-name" placeholder="enter your last name" required><br><br>
-
-          <label >Email:</label>
-          <input  type="text" id="" placeholder="your email address" required><br><br>
-  
-          <label>Address:</label>
-          <textarea rows="5" cols="20" id="address"  placeholder="enter your address" required></textarea> 
-
-          <label> State:</label>
-          <input type="text" id="state" placeholder="enter your state" required><br/><br>
-          
-          <label>Gender</label><br>
-          <input type="radio" name="gender" id="male">
-          <label>Male</label>
-          <input type="radio" name="gender" id="female">
-          <label>Female</label><br>
-          
-  
-          <label>pincode:</label>
-          <input type="text" id="pincode" placeholder="enter your pincode"  required><br><br>
-  
-          <input type="submit" value="Submit" id="submit" class="btn btn-primary">
+            <label for="last-name" id="name-label">
+                Last Name:
+                <input type="Name" id="last-name" placeholder="Enter Last Name">
+            </label>
         </div>
-      </form>
+        <label for="email" id="email-label">E-mail:
+            <input type="Email" id="email" placeholder="Enter Email-id">
+        </label>
+        <label for="address" id="address-label">Address:
+            <input type="text" id="address" placeholder="Enter Address">
+        </label>
+        <label for="pincode" id="pincode-label">Pincode:
+            <input type="text" id="pincode" placeholder="Enter Pincode">
 
+        </label>
 
+        <label for="state" id="state-label">State:
+            <input type="text" id="state" placeholder="Enter State">
+        </label>
+        <label for="country" id="country-label">Country:
+            <input type="text" id="country" placeholder="Enter Country">
+        </label>
+        <div class="gender"><div class="gen"> Gender:</div> <br>
+            <label for="gender"><input id="gender" type="radio" value="Male" name="gender"> Male</label>
+            <label for="gender"><input id="gender" type="radio" value="Female" name="gender"> Female</label>
+            <label for="gender"><input id="gender" type="radio" value="Custom" name="gender"> Custom</label>
+        </div>
+        <div class="food-radio">
+            <div class="food-title">Your Favorite Foods:</div>
+            <div class="radio">
+                <label for="food-1"><input id="radio" type="radio" value="Dosa" name="food-1">Dosa</label><br>
+                <label for="food-2"><input id="radio" type="radio" value="Masala dosa" name="food-2">Masala
+                    dosa</label><br>
+                <label for="food-3"><input id="radio" type="radio" value="Pongal" name="food-3">Pongal</label><br>
+                <label for="food-4"><input id="radio" type="radio" value="Poori" name="food-4">Poori</label><br>
+                <label for="food-5"><input id="radio" type="radio" value="Chappathi" name="food-5">Chappathi</label><br>
+            </div>
+        </div>
 
-      <div>
-        <table class="table">
-          <thead>
-            <th>FirstName</th>
-         <th>Lastname</th>
-       <th>email</th>
-       <th>address</th>
-           <th>state</th>
-       <th>gender</th>
-        <th>pincode</th>
+        <div class="form-group">
+            <label for="comments" class="comment-title">Comment: <br>
+                <textarea id="comments" cols="30" rows="5" placeholder="Comment here...."></textarea>
+            </label>
+        </div>
+        <div id="submit"><button type="button" id="submit" class="btn" onclick="addData(this)">Submit</button></div>
 
-          </thead>
-          <tbody>
+    </form>
+    <h2>Table:</h2>
+    <table class="table">
+        <tr class="table-head">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>E-mail </th>
+            <th>Address</th>
+            <th>Pincode</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Gender</th>
+            <th>Favorite Foods</th>
+            <th>Comments</th>
+        </tr>
+    </table>
 
-          </tbody>
-
-        </table>
-
-      </div>
-        
-        
-        
-     
-
-    
+    <script src="script.js"></script>
+    <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
 </body>
+
 </html>

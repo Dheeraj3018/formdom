@@ -1,86 +1,52 @@
-// let newElement = document.createElement("h1");
-// //innertext
-// newElement.innerText = "New Form";
-// document.body.append(newElement);
-// console.log(document);
+let sub = document.getElementById("survey-form");
+let fname = document.getElementById("first-name");
+let lname = document.getElementById("last-name");
+let mail = document.getElementById("email");
+let add = document.getElementById("address");
+let pin = document.getElementById("pincode");
+let gen = document.querySelectorAll("#gender");
+let st = document.getElementById("state");
+let coun = document.getElementById("country");
+let fav = document.querySelectorAll("#radio");
+let com = document.getElementById("comments");
+function addData(el) {
+  var table = document.querySelector(".table");
+  let food = [];
+  for (var i = 0; i < fav.length; i++) {
+    if (fav[i].checked == true) {
+      food.push(fav[i].value);
+    }
+  }
+  if (food.length >= 2) {
+    var tr = table.insertRow();
+    var cell1 = tr.appendChild(document.createElement("td"));
+    var cell2 = tr.appendChild(document.createElement("td"));
+    var cell3 = tr.appendChild(document.createElement("td"));
+    var cell4 = tr.appendChild(document.createElement("td"));
+    var cell5 = tr.appendChild(document.createElement("td"));
+    var cell6 = tr.appendChild(document.createElement("td"));
+    var cell7 = tr.appendChild(document.createElement("td"));
+    var cell8 = tr.appendChild(document.createElement("td"));
+    var cell9 = tr.appendChild(document.createElement("td"));
+    var cell10 = tr.appendChild(document.createElement("td"));
+    cell1.textContent = fname.value;
+    cell2.textContent = lname.value;
+    cell3.textContent = mail.value;
+    cell4.textContent = add.value;
+    cell5.textContent = pin.value;
+    cell6.textContent = st.value;
+    cell7.textContent = coun.value;
+    cell10.textContent = com.value;
+    for (var i = 0; i < gen.length; i++) {
+      if (gen[i].checked == true) {
+        cell8.textContent = gen[i].value;
+        break;
+      }
+    }
+    cell9.textContent = food;
+  } else {
+    alert('"please select more than two foods"');
+  }
 
-// //inner HTml
-
-// document.body.innerHTML = `<div>
-
-// </div> `;
-// let addbtn = document.getElementById("submit");
-// addbtn.addEventListener("click", () => {});
-
-// const inputArea = document.createElement("textarea");
-// inputArea.setAttribute("id", "message-area");
-// let validateString = document.createElement("div");
-// validateString.setAttribute("id", "message-detail");
-// document.body.append(inputArea, validateString);
-
-// document.getElementById("submit").onclick => function () {
-//   document.getElementById("table").style.display = "block";
-
-//   var table = document.getElementById("table");
-//   var row = table.insertRow(-1);
-//   var name = row.insertCell(0);
-//   var email = row.insertCell(1);
-//   var address = row.insertCell(2);
-//   var phone=row.insertCell(3);
-//   name.innerHTML = document.getElementById("name").value;
-//   email.innerHTML = document.getElementById("email").value;
-//   address.innerHTML = document.getElementById("address").value;
-//   phone.innerHTML=document.getElementById("phone").value;
-
-//   return false;
-// }
-
-// window.addEventListener("scroll");
-// window.addEventListener("resize");
-
-const form = document.getElementById("form");
-const table = document
-
-  .getElementsByTagName("tbody")[0];
-
-// Add form submission event listener
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent form submission
-
-  // Get form values
-  const firstname = document.getElementById("firstname").value;
-  const lastname = document.getElementById("lastname").value;
-
-  const email = document.getElementById("email").value;
-  const address = document.getElementById("address");
-  const state = document.getElementById("state");
-  const gender = document.getElementById("gender");
-
-  const pincode = document.getElementById("pincode").value;
-
-  // Create a new row in the table
-  const newRow = table.insertRow(table.rows.length);
-
-  const newRow = table.insertRow();
-
-  // Insert cells with the form values
-  newRow.insertCell().textContent = firstname;
-  newRow.insertCell().textContent = lastname;
-  newRow.insertCell().textContent = email;
-  newRow.insertCell().textContent = address;
-  newRow.insertCell().textContent = state;
-  newRow.insertCell().textContent = gender;
-  newRow.insertCell().textContent = pincode;
-
-  // Insert cells with the form values
-  const cell1 = newRow.insertCell(0);
-  const cell2 = newRow.insertCell(1);
-  const cell3 = newRow.insertCell(2);
-  const cell4 = newRow.insertCell(3);
-  const cell5 = newRow.insertCell(4);
-  const cell6 = newRow.insertCell(5);
-  const cell7 = newRow.insertCell(6);
-
-  // Clear the form fields
-  form.reset();
-});
+  sub.reset();
+}
